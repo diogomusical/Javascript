@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Evento onclick</title>
+
+    <style>
+        body{
+            font:12pt arial;
+        }
+
+        button{
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escrever na folha html</h1>
+
+    <button onclick="clicar()">Clique aqui</button>
+    
+    <button onmousemove="clicarmove()">Clique aqui</button>
+
+
+    <section id="resultado">
+
+        <p>Aqui vai aparecer o nome</p>
+
+
+
+    </section>
+
+    <section id="morada">
+
+        <p>Aqui vai aparecer o nome</p>
+
+
+
+    </section>
+
+    <script>
+         function clicar(){
+           var nome = window.prompt("Qual o seu nome?");
+           var res=window.document.getElementById("resultado");
+
+            res.innerHTML=`Olá <b> ${nome} </b> bem-vindo à minha página`;
+         }
+            function clicarmove(){
+           var morada = window.prompt("Qual a sua morada?");
+           var mor=window.document.getElementById("morada");
+
+            mor.innerHTML=`Morada: ${morada}`;
+         }
+
+         
+
+    </script>
+
+
+
+
+    
+</body>
+</html>

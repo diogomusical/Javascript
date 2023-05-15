@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Evento onclick</title>
+
+    <style>
+        body{
+            font:12pt arial;
+        }
+
+        button{
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Evento on click</h1>
+
+    <button onclick="clicar()">Clique aqui</button>
+
+    <script>
+         function clicar(){
+           var nome = window.prompt("Qual o seu nome?");
+        //    window.alert("Olá " + nome + ". Seja bem-vindo.");
+            window.alert(`Olá ${nome}.  Seja bem-vindo.`)
+         }
+
+
+    </script>
+    
+</body>
+</html>

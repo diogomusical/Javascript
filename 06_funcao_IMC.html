@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplos de funções</title>
+</head>
+
+    <script>
+
+
+
+        (function(){
+            function calculaIMC(peso, altura){
+            // se retirar o var as variáveis passam a fazer parte do escopo global
+                   var imc = peso / (altura * altura );
+                return imc;
+                //console.log("O resultado é ", imc.toFixed(2));
+                }
+            
+                function classificacaoimc(imc){
+                    if (imc < 16){
+                        return('Muito abaixo do peso');
+                    }
+                    else if(imc < 18){
+                        return('Abaixo do peso');
+                    }
+                    else if(imc < 25){
+                        return('Normal');
+                    }
+                    else if(imc < 28){
+                        return('Acima do peso');
+                    }
+                    else{
+                        return('Muito acima do peso');
+                    }
+                }
+
+            var IMC = calculaIMC(88,1.70);  // Fixa duas casas decimais para tofixed.
+            console.log("O resultado é ", IMC.toFixed(2));
+            
+            var classificacao = classificacaoimc(IMC);
+            console.log("A classificação é: ", classificacao);
+            console.log("------------------------------------");
+        })();
+        
+
+
+
+
+
+
+ 
+
+ 
+
+
+    </script>
+
+<body>
+   <h1>Funções em HTML</h1>
+</body>
+</html>

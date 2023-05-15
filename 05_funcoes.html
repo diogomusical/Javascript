@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplos de funções</title>
+</head>
+
+    <script>
+
+        function somar(n1,n2){
+            return n1 + n2;
+        }
+        
+        var soma = somar(10,20);
+        console.log("O resultado é ", soma); //Para ver na consola vista apartir da propriedade inspecionar
+
+        somar.texto = 'Isto é uma propriedade'; // Mesmo as próprias funções podem ter propriedades
+
+        console.log(somar.texto);
+
+        console.log('----------------------');
+
+        var x = 20;
+        var y;
+
+        function mostrarXY(){
+            // se retirar o var as variáveis passam a fazer parte do escopo global
+            var x=50;
+            var y=10;
+            console.log('O valor de x dentro da função é ', x);
+            console.log('O valor de y dentro da função é ', y);
+
+        }
+
+
+        mostrarXY();
+        console.log('----------------------');
+        console.log('O valor de x fora da função é ', x);
+        console.log('O valor de y fora da função é ', y);
+
+        // IIFE - Immediately invoked function expression
+        (function(){
+            function somar(){
+                console.log(arguments); //vai buscar o número de argumentos
+                var resultado = 0;
+                var x = 0;
+                
+                while(typeof(arguments[x])==='number'){ // enquanto houver argumentos
+                    resultado += arguments[x];
+                    x++;
+                }
+                console.log("O resultado é ", resultado);
+            }
+
+             somar(10,0,15,20) // O Javascript entende o 0 como falso conta errada por isso tem de se forçar 
+                                // a ser do tipo number que é o que fizemos na linha do typeof e
+                                // assim a soma já vai dar certo.
+
+        })();
+
+        (function(){
+            function somar(){
+                console.log(arguments); //vai buscar o número de argumentos
+                var resultado = 0;
+                var x = 0;
+                
+                while(arguments[x]){ // enquanto houver argumentos
+                    resultado += arguments[x];
+                    x++;
+                }
+                console.log("O resultado é ", resultado);
+            }
+
+             somar(10,15,15,20);
+
+        })();
+
+        (function(){
+            function media(){
+                console.log(arguments); //vai buscar o número de argumentos
+                var resultado = 0;
+                var x = 0;
+                
+                while(typeof(arguments[x])==='number'){ // enquanto houver argumentos
+                    resultado += arguments[x];
+                    x++;
+                }
+
+                console.log("O resultado da média é ", resultado/x);
+                console.log("O número de argumentos é ",arguments.length);
+            }
+
+             media(10,20,30,40);
+             media(10,10,10);
+             media(10,7,9,8,6,9,8,9,8,9,8,7,7,8,9);
+             media(1,2,3,4,5,6,7,8,9)
+        })();
+
+ 
+
+
+    </script>
+
+<body>
+   <h1>Funções em HTML</h1>
+</body>
+</html>
