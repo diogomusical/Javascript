@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador de cliques</title>
+</head>
+<body>
+    <h1>Contador de cliques</h1>
+    <button onclick="contar()"> Clica aqui várias vezes </button>
+    <button onclick="zerar()"> Limpar valores</button>
+
+    <section id="result">
+        <p> Ja clicou 0 vezes.</p>
+    </section>
+
+    <script>
+            contador = 0;   
+            var res=document.querySelector('section#result');       
+            function contar(){ 
+                contador++;
+                res.innerHTML = `<p> Clicou ${contador} vezes </p>`; 
+
+
+
+            
+        }
+        
+  
+        function zerar(){
+             contador = 0;
+            // var contador = 0; é errado porque é uma variável local 
+            res.innerHTML = `<p> O número de vezes que clica é ${contador} </p>`;
+        }
+    </script>
+    
+</body>
+</html>

@@ -35,25 +35,19 @@
                     }
                 }
 
-            var IMC = calculaIMC(88,1.70);  // Fixa duas casas decimais para tofixed.
+            var IMC = calculaIMC(60,1.70);  // Fixa duas casas decimais para tofixed.
             console.log("O resultado é ", IMC.toFixed(2));
             
             var classificacao = classificacaoimc(IMC);
             console.log("A classificação é: ", classificacao);
             console.log("------------------------------------");
+
+
+            var classificacao = classificacaoimc(calculaIMC(88,1.90));
+            console.log("A classificação é: ", classificacao);
+            console.log("------------------------------------");
         })();
         
-
-
-
-
-
-
- 
-
- 
-
-
     </script>
 
 <body>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Soma dois números</title>
+</head>
+
+<body>
+   <h1>Soma dois numeros vindos de um prompt</h1>
+
+   <button onclick="somar()">Soma dois números</button>
+   <p id="result"> O resultado vai aparecer aqui</p>
+    <script>
+        function somar(){
+            var n1=Number(window.prompt("Digite o primeiro número:"));
+            var n2=Number(window.prompt("Digite o segundo número:"));
+
+            var soma=n1+n2;
+
+            var result = document.querySelector('p#result');
+            result.innerHTML = (`O resultado da soma de <mark> <b> ${n1} +  ${n2} = ${soma} </mark> .`); // Nesta linha é tudo html
+
+        } // id não se podem repetir são únicos, podemos ter o mesmo id desde que seja em tags diferentes por exemplo pode existir p#result e h1#result, mas não 
+        // podemos ter p#result duas vezes
+    </script>
+   <p>e não vai aparecer aqui</p>
+</body>
+</html>
+        

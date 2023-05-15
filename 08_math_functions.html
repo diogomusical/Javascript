@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Cálculos matemáticos
+    </title>
+</head>
+<body>
+    <h1>Cálculos matemáticos em Javascript</h1>
+    <button onclick="calcular()">Número a calcular</button>
+    <section id="result">
+        <p> O resultado vai aparecer aqui.</p>
+    </section>
+
+    <script>
+        function calcular(){
+            let numero = Number(window.prompt("Digite um número: "));
+
+            let res = document.querySelector("section#result");
+            res.innerHTML = `<p>O número que inseriu foi o ${numero}.</p>`;
+            res.innerHTML += `<p>O seu número absoluto é ${Math.abs(numero)}.</p>`;
+            res.innerHTML += `<p> A parte inteira do número anterior ${Math.trunc(numero)}.</p>`;
+            res.innerHTML += `<p> A raiz quadrada do número anterior é ${Math.sqrt(numero)}.</p>`;
+            res.innerHTML += `<p> A raiz cúbica do número anterior é ${Math.cbrt(numero)}.</p>`;
+            res.innerHTML += `<p> O resultado de ${numero}<sup>2</sup> é ${Math.pow(numero,2)}.</p>`;
+            res.innerHTML += `<p> O resultado de ${numero}<sup>3</sup> é ${Math.pow(numero,2)}.</p>`;
+            res.innerHTML += `<p> Arredonda para o número mais próximo  ${Math.round(numero)}.</p>`;
+            
+            
+            res.innerHTML += `<p> Gera um número aleatório  ${Math.trunc(Math.random()*50)+1}.</p>`; // Gera números aleatórios de 1 a 50.
+            res.innerHTML += `<p> Gera um número aleatório  ${Math.ceil(Math.random()*50)}.</p>`; // Gera números aleatórios de 1 a 50.
+            
+            
+
+   
+            // Numero ao quadrado
+            // Numero ao cubo
+            // Numero inteiro mais próximo
+
+        }
+    </script>
+</body>
+</html>

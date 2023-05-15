@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Soma dois números</title>
+</head>
+
+<body>
+   <h1>Soma dois numeros vindos de um prompt</h1>
+
+   <button onclick="calcularmedia()">Média dois números</button>
+   <p id="Nome"> Aqui vai aparecer o nome, as notas e a média.</p>
+   <!-- <p id="n1"> Aqui vai aparecer o primeiro numero.</p>
+   <p id="n2"> Aqui vai aparecer o segundo numero.</p>
+   <p id="media"> Aqui vai aparecer a media.</p> -->
+    <script>
+        function calcularmedia(){
+            var nome = window.prompt("Digite o seu nome: ");
+            var n1 = Number(window.prompt('Digite o primeiro nome: '));
+            var n2 = Number(window.prompt('Digite o segundo número'));
+
+            soma = n1+n2
+            media = soma/2;
+
+            var Nome = document.querySelector('p#Nome');
+            // var N1 = document.querySelector('p#n1');
+            // var N2 = document.querySelector('p#n2');
+            // var Media = document.querySelector('p#media');
+            // let Nome = document.getElementById("Nome")
+      
+            Nome.innerHTML = (`<p> O nome introduzido é <b>${nome}</b>.</p>`);
+            Nome.innerHTML += (`<p> a primeira nota é <b>${n1}</b>.</p>`);
+            Nome.innerHTML += (`<p> o segunda nota é <b>${n2}</b>.</p>`);
+            Nome.innerHTML += (`<p> a média das notas é <b>${media}</b>.</p>`);
+            // N1.innerHTML = (`O primeiro número é<b> ${n1}</b>.`);
+            // N2.innerHTML = (`O segundo número é <b> ${n2}</b>.`);
+            // Media.innerHTML = (`O valor médio é <b> ${media}</b>`);
+
+
+        }
+    </script>
+   <p>e não vai aparecer aqui</p>
+</body>
+</html>
+        
