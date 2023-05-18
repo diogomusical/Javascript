@@ -6,28 +6,57 @@
     <title> 🫣 Tabuada </title>
     
     <style>
-       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Siddham&family=Oswald&family=Work+Sans&display=swap');
+       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Siddham&family=Oswald&family=Work+Sans&display=swap'); /* Para importar as fontes do*/
         h1{
             /* font-family: 'Times New Roman', Times, serif; */
             font-family: 'Oswald', Times, serif; 
-            font-size: 20px;
+            font-size: 70px;
+            color: green;
         }
+
+        h2{
+           font-family: 'Times New Roman', Times, serif; 
+           color: red;
+        }
+        body{
+            font-family: 'Oswald', Times, serif; 
+            background-color: blanchedalmond;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+ 
     </style>
 
     <script>
         function tabuada(){
-            window.alert('Clicou no botão.')
-        }
+           // window.alert('Clicou no botão.');
+         
+                var n=Number(document.getElementById('fnumero').value); // para ir buscar o numero ao formulario
+                var saida=document.getElementById('saida');
+                //window.alert('Clicou no botão.');
+                saida.innerHTML = `<h2> Tabuada do ${n} <br> <h2>`; // Importante para limpar os resultados;
+                for(var i=1; i<=10; i++){
+                    var multiplicacao = n * i;
+                    saida.innerHTML += `${n} x ${i} = ${multiplicacao} <br>`;
+                }
+            }
+
     </script>
 </head>
 <body>
-    <h1>SUPER TABUADA</h1>
+    <h1>Tabuada</h1>
 
     <h2>Escreva um número e de seguida eu escrevo a tabuada. 😎</h2>
     <section id="entrada">
     <form action="#" method="get">
         <label for="fnumero">Introduza um número: </label>
-        <input type="number" min = 1 max = 10 name="numero" id="fnumero">
+        <input type="number" min = 1 max = 10 value = 1 name="numero" placeholder="nº" id="fnumero" onclick="tabuada()" onchange="tabuada()"> 
+        <!-- o evento onkeypress faz a tabuada ao escrever, mas o número anterior
+        exemplo: introduz 62 -> faz a tabuada do 6, introduz 624 -> faz a tabuado do 62 -->
+        <!-- o evento onchange muda após escrever e dar enter. -->
         <input type="submit" value="Tabuada" formaction="javascript:tabuada()">
     </form>
     </section>
