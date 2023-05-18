@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+
+    <title> 🫣 Tabuada </title>
+    
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Siddham&family=Oswald&family=Work+Sans&display=swap');
+        h1{
+            /* font-family: 'Times New Roman', Times, serif; */
+            font-family: 'Oswald', Times, serif; 
+            font-size: 20px;
+        }
+    </style>
+
+    <script>
+        function tabuada(){
+            window.alert('Clicou no botão.')
+        }
+    </script>
+</head>
+<body>
+    <h1>SUPER TABUADA</h1>
+
+    <h2>Escreva um número e de seguida eu escrevo a tabuada. 😎</h2>
+    <section id="entrada">
+    <form action="#" method="get">
+        <label for="fnumero">Introduza um número: </label>
+        <input type="number" min = 1 max = 10 name="numero" id="fnumero">
+        <input type="submit" value="Tabuada" formaction="javascript:tabuada()">
+    </form>
+    </section>
+    <section id="saida">
+        <p> Os dados vão aparecer aqui. </p>
+    </section>
+</body>
+</html>

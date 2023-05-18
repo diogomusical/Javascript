@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio do botao</title>
+</head>
+<body>
+    <h1>Exercício do botão</h1>
+    Exercício:
+    <br>
+    Elabore uma página HTML em que o utilizador ao carregar num botão, a página pede 2 números.
+    Deverão surgir na página os dois números e de seguida o maior deles.
+    <br>
+    <button onclick="clickar()">Qual é o maior número</button>
+    <p id="result">Aqui vai escrever o maior número.</p>
+    <script>
+        function clickar(){
+            var numero1= Number(window.prompt("Qual o primeiro número?"));
+        //    window.alert("Olá " + nome + ". Seja bem-vindo.");
+         //   window.alert(`Olá ${numero1}.  Seja bem-vindo.`)
+
+            var numero2= Number(window.prompt("Qual o segundo número?"));
+        //    window.alert("Olá " + nome + ". Seja bem-vindo.");
+        //    window.alert(`Olá ${numero2}.  Seja bem-vindo.`);
+        var res=document.querySelector('p#result');
+        if (numero1 > numero2){
+            res.innerHTML = `<p> O primeiro número ${numero1} é maior do que o segundo numero ${numero2}.</p>`; 
+        }
+        else if (numero2 == numero1){
+            res.innerHTML = `<p> Os números são iguais ${numero2}.`; 
+        }
+        else {
+            res.innerHTML = `<p> O segundo número ${numero2} é maior do que o primeiro numero ${numero1}.  </p>`; 
+
+        }
+
+        //window.alert(`O número maior é ${num_maior}`)
+        
+
+        }
+    </script>
+    </body>
+</html>

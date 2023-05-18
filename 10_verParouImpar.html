@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio do botao</title>
+</head>
+<body>
+    <h1>Exercício do botão</h1>
+    Exercício:
+    <br>
+    Escrever se o número é par ou ímpar.
+    <br>
+    <button onclick="clickar()"> Verificar se um número é par ou ímpar</button>
+    <p id="result">Aqui vai escrever se o número é para ou ímpar.</p>
+    <script>
+        function clickar(){
+            var numero= Number(window.prompt("Qual o primeiro número?"));
+        //    window.alert("Olá " + nome + ". Seja bem-vindo.");
+         //   window.alert(`Olá ${numero1}.  Seja bem-vindo.`)
+
+        //    window.alert("Olá " + nome + ". Seja bem-vindo.");
+        //    window.alert(`Olá ${numero2}.  Seja bem-vindo.`);
+        var res=document.querySelector('p#result');
+        if (numero % 2 == 0){
+            res.innerHTML = `<p> O número ${numero} é par.</p>`; 
+        }
+        else {
+            res.innerHTML = `<p> O número ${numero} é ímpar.  </p>`; 
+
+        }
+
+        //window.alert(`O número maior é ${num_maior}`)
+        
+
+        }
+    </script>
+    </body>
+</html>

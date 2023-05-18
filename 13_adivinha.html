@@ -8,28 +8,95 @@
     <h1>Adivinha o numero em que eu pensei entre 1 e 100.</h1>
     <p> Já gerei o número. Começa a jogar</p>
 
-    <button onclick="jogar()">Jogar - Aposta um numero.</button>
+    <button onclick="jogar()">Jogar - Aposta um numero</button>
+
+    <button onclick="limpar()">Reset</button>
+
+    <button onclick="jogar_while()">Jogar - Aposta um numero com o ciclo while</button>
+
+    <section id="result">
+        <br> Tente a sua sorte.
+    </section>
+
+    <section  id="tentativas">
+        <br> Nº de tentativas.
+    </section>
+
 
     <script>
+        var aleatorio;
+        var palpite;
+        
+        var res=document.querySelector('section#result')
+        var tent=document.querySelector('section#tentativas')
+        var contador = 0;
         function sorteia_numero(){
-        var aleatorio = Math.trunc(Math.random()*100)+1; // Gera um numero aleatorio entre 1 e 100, soma-se mais 1 para não obter o valor 0, trunca tira só a parte inteira do número
-        //window.alert(aleatorio);
-}
+        aleatorio = Math.trunc(Math.random()*100)+1; // Gera um numero aleatorio entre 1 e 100, soma-se mais 1 para não obter o valor 0, trunca tira só a parte inteira do número
+        }       
         function jogar(){
+            //window.alert(aleatorio);
+                contador++;
                 palpite=Number(window.prompt("Qual é o seu palpite?"));
-              
+
+
+              //  window.alert(palpite);
+                //window.alert(palpite);
                 // Se eu acertar no número aparece a palavra Ganhou
                 // Se o aleatório < palpite escrever o meu número é menor que o seu palpite. Jogue outra vez
                 // Se o aleatório > palpite escrever o meu número é maior que o seu palpite. Jogue outra vez
                 
                 if ( aleatorio == palpite ){
-                        
+                    //window.alert("Acertou");    
+                    res.innerHTML=`<b> <br> Acertou!!Acertou ao fim de nº ${contador} tentativas. </b>`;
                 }
-                else{
+                else if (aleatorio > palpite){
+                    res.innerHTML=`<br>O seu número é maior que o seu palpite. <b> Tente Novamente! </b>`;
+                }
+                else
+                {
+                    res.innerHTML=`<br>O seu número é menor que o seu palpite. <b> Tente Novamente </b>`;
+                }
+                tent.innerHTML=`<b> Nº tentativas: ${contador} </b>`;
+                }
 
-                }
             
+        function limpar(){
+            contador = 0;
+            res.innnerHTML = `Tente a sua sorte.`
+            tent.innerHTML=`<b> Nº tentativas: ${contador} </b>`;
         }
+          
+        
+
+        function jogar_while(){
+            //window.alert(aleatorio);
+                while(palpite != aleatorio){
+                contador++;
+                palpite=Number(window.prompt("Qual é o seu palpite?")); // Como está dentro do while, ele vai ler sempre o número até ser diferente. Mas o última vez que introduzir 
+                                                                        // o número ainda vai passar pelas condições mesmo que seja igual ao aleatório porque já passou a condição.
+
+
+              //  window.alert(palpite);
+                //window.alert(palpite);
+                // Se eu acertar no número aparece a palavra Ganhou
+                // Se o aleatório < palpite escrever o meu número é menor que o seu palpite. Jogue outra vez
+                // Se o aleatório > palpite escrever o meu número é maior que o seu palpite. Jogue outra vez
+                
+                if ( aleatorio < palpite ){
+                    window.alert(`O seu número é menor que o seu palpite. Tente Novamente Nº tentativas: ${contador}`);
+                    //window.alert("Acertou");    
+                }
+                else if (aleatorio > palpite){
+                    window.alert(`O seu número é maior que o seu palpite. Tente Novamente! Nº tentativas: ${contador}`);
+                }
+                else
+                {
+                    window.alert(`Acertou!!Acertou ao fim de nº ${contador} tentativas.`);
+                }
+                }
+
+            }
+    
     </script>
 </body>
 </html>
